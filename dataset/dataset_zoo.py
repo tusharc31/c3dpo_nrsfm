@@ -24,7 +24,7 @@ def dataset_zoo(dataset_name='h36m',
 
     assert dataset_name in ['h36m', 'h36m_hourglass',
                             'pascal3d', 'pascal3d_hrnet', 'up3d_79kp',
-                            'cub_birds', 'cub_birds_hrnet']
+                            'cub_birds', 'cub_birds_hrnet', 'train_actual_small']
 
     main_root = DATASET_ROOT
     json_train = os.path.join(main_root, dataset_name + '_train.json')
