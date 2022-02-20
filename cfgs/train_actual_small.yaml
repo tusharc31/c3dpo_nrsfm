@@ -71,7 +71,7 @@ dictitems:
       gamma: 0.1
       lr: 0.001
       lr_policy: multistep
-      max_epochs: 90
+      max_epochs: 60
       milestones:
       - 60
       - 80
