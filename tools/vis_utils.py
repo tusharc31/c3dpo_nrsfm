@@ -5,6 +5,7 @@ This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
 """
 
+import os
 import numpy as np
 import io
 import matplotlib.pyplot as plt
@@ -256,7 +257,7 @@ def visdom_plot_pointclouds(viz, pcl, visdom_env, title,
 def matplot_plot_point_cloud(ptcloud, pointsize=20, azim=90, elev=90,
                              figsize=(8, 8), title=None, sticks=None, lim=None,
                              cmap='gist_ncar', ax=None, subsample=None,
-                             flip_y=False):
+                             flip_y=False, savePath=''):
 
     if lim is None:
         lim = np.abs(ptcloud).max()
@@ -300,7 +301,11 @@ def matplot_plot_point_cloud(ptcloud, pointsize=20, azim=90, elev=90,
     plt.axis('off')
     if title is not None:
         ax.set_title(title)
-    plt.show()
+    
+    plt.savefig(savePath)
+    plt.show(block=False)
+    plt.pause(3)
+    plt.close('all')
 
     return fig
 
@@ -318,3 +323,4 @@ def enlarge_box(box, perc, imsz):
     box = np.maximum(np.minimum(box, np.array([imw, imh, imw, imh])), 0.)
 
     return box
+

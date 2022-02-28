@@ -45,12 +45,13 @@ def rotating_3d_video(
 
     vw = VideoWriter(out_path=video_path)
     for ii, shape_rot_ in enumerate(shape_rot):
+        savePath = os.path.splitext(video_path)[0] + '3D_%04d.png' % ii
         fig = matplot_plot_point_cloud(shape_rot_.numpy(),
                                        pointsize=300, azim=-90, elev=90,
                                        figsize=(8, 8), title=title,
                                        sticks=sticks, lim=lim,
                                        cmap=cmap, ax=None, subsample=None,
-                                       flip_y=True)
+                                       flip_y=True, savePath=savePath)
         vw.write_frame(fig)
 
         if ii in extract_frames:
@@ -58,7 +59,10 @@ def rotating_3d_video(
             print('exporting %s' % framefile)
             plt.savefig(framefile)
 
-        plt.close(fig)
+        plt.show(block=False)
+        plt.pause(1)
+        plt.close('all')
+        #plt.close(fig)
 
     vidpath = vw.get_video(silent=True)
 
@@ -68,3 +72,4 @@ def rotating_3d_video(
                   env=visdom_env, win=visdom_win)
 
     return vidpath
+
