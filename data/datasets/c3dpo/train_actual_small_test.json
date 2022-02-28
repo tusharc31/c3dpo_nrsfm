@@ -75,7 +75,7 @@
                 0.0,
                 1.0
             ],
-            "img": "frame_00000000_Color_01.png"
+            "img": "test_imgs/frame_00000000_Color_01.png"
         },
         {
             "kp_loc": [
@@ -152,7 +152,7 @@
                 0.0,
                 1.0
             ],
-            "img": "frame_00000010_Color_01.png"
+            "img": "test_imgs/frame_00000010_Color_01.png"
         },
         {
             "kp_loc": [
@@ -229,7 +229,7 @@
                 1.0,
                 0.0
             ],
-            "img": "frame_00000020_Color_01.png"
+            "img": "test_imgs/frame_00000020_Color_01.png"
         },
         {
             "kp_loc": [
@@ -306,7 +306,7 @@
                 1.0,
                 1.0
             ],
-            "img": "frame_00000030_Color_01.png"
+            "img": "test_imgs/frame_00000030_Color_01.png"
         },
         {
             "kp_loc": [
@@ -383,7 +383,7 @@
                 1.0,
                 0.0
             ],
-            "img": "frame_00000040_Color_01.png"
+            "img": "test_imgs/frame_00000040_Color_01.png"
         },
         {
             "kp_loc": [
@@ -460,7 +460,7 @@
                 0.0,
                 1.0
             ],
-            "img": "frame_00000050_Color_01.png"
+            "img": "test_imgs/frame_00000050_Color_01.png"
         },
         {
             "kp_loc": [
@@ -537,7 +537,7 @@
                 1.0,
                 0.0
             ],
-            "img": "frame_00000060_Color_01.png"
+            "img": "test_imgs/frame_00000060_Color_01.png"
         },
         {
             "kp_loc": [
@@ -614,7 +614,7 @@
                 1.0,
                 1.0
             ],
-            "img": "frame_00000070_Color_01.png"
+            "img": "test_imgs/frame_00000070_Color_01.png"
         },
         {
             "kp_loc": [
@@ -691,7 +691,7 @@
                 1.0,
                 0.0
             ],
-            "img": "frame_00000080_Color_01.png"
+            "img": "test_imgs/frame_00000080_Color_01.png"
         },
         {
             "kp_loc": [
@@ -768,7 +768,7 @@
                 1.0,
                 0.0
             ],
-            "img": "frame_00000090_Color_01.png"
+            "img": "test_imgs/frame_00000090_Color_01.png"
         }
     ],
     "dataset": "train_actual_small"
