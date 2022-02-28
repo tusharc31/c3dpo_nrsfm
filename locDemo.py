@@ -51,7 +51,7 @@ def run_demo(model, model_dir, data, idx):
     # predicted 3d keypoints in camera coords
     kp_pred_3d = preds['shape_image_coord'][0]
 
-    sticks = STICKS['cars']
+    sticks = STICKS['train_actual_small']
 
     # viz = get_visdom_connection()
     im_proj = show_projections(
