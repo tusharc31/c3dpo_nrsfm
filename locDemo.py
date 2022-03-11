@@ -35,8 +35,6 @@ def stitchSave(images, savePath):
     new_im.save(savePath)
 
 def run_demo(model, model_dir, data, idx):
-#    print("data", data)
-#    print("idx", idx)
     net_input = get_net_input(getTestSample(data, idx))
 
     preds = model(**net_input)
@@ -50,6 +48,9 @@ def run_demo(model, model_dir, data, idx):
 
     # predicted 3d keypoints in camera coords
     kp_pred_3d = preds['shape_image_coord'][0]
+
+    print("predicted 3d keypoints in camera coords")
+    print(kp_pred_3d)
 
     sticks = STICKS['train_actual_small']
 
