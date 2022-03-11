@@ -52,12 +52,25 @@ def run_demo(model, model_dir, data, idx):
     print("predicted 3d keypoints in camera coords")
     print(kp_pred_3d)
 
-    gg = kp_pred_3d.numpy()
-    gg.append([0, 0, 0])
-    gg.append([0, 10, 0])
-    gg.append([0, 0, 10])
-    gg.append([10, 0, 0])
-    print(gg)
+    #gg = kp_pred_3d.cpu().detach().numpy()
+    #print(gg.shape)
+    #gg.append([0, 0, 0])
+    #gg.append([0, 10, 0])
+    #gg.append([0, 0, 10])
+    #gg.append([10, 0, 0])
+    #gg = gg.T
+    #newrow = [0, 0, 0]
+    #gg = np.vstack([gg, newrow])
+    #newrow = [10, 0, 0]
+    #gg = np.vstack([gg, newrow])
+    #newrow = [0, 10, 0]
+    #gg = np.vstack([gg, newrow])
+    #newrow = [0, 0, 10]
+    #gg = np.vstack([gg, newrow])
+    #print(gg)
+    #gg = gg.T
+
+    #kp_pred_3d = torch.from_numpy(gg)
 
     sticks = STICKS['train_actual_small']
 
@@ -74,6 +87,10 @@ def run_demo(model, model_dir, data, idx):
         stickwidth=2,
     )
 
+    print("IM_PROJ")
+    print(im_proj)
+    print(im_proj.shape)
+
     im_proj_pred = show_projections(
         kp_loc_pred[None].detach().cpu().numpy(),
         visdom_env='demo_h36m',
@@ -86,12 +103,19 @@ def run_demo(model, model_dir, data, idx):
         stickwidth=2,
     )
 
+    print("IM_PROJ_PRED")
+    print(im_proj_pred)
+    print(im_proj_pred.shape)
+
     saveDir = os.path.join(model_dir, 'test%d' % idx)
     if not os.path.exists(saveDir):
        os.makedirs(saveDir)
 
     im_proj = Image.fromarray(im_proj)
     im_proj_pred = Image.fromarray(im_proj_pred)
+
+    print("AFTER", im_proj)
+    print("AFTER1", im_proj_pred)
     savePath = os.path.join(saveDir, 'projection.png')
     print('Saving keypoints to %s' % savePath)
     stitchSave([im_proj, im_proj_pred], savePath)
