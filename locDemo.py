@@ -52,6 +52,13 @@ def run_demo(model, model_dir, data, idx):
     print("predicted 3d keypoints in camera coords")
     print(kp_pred_3d)
 
+    gg = kp_pred_3d.numpy()
+    gg.append([0, 0, 0])
+    gg.append([0, 10, 0])
+    gg.append([0, 0, 10])
+    gg.append([10, 0, 0])
+    print(gg)
+
     sticks = STICKS['train_actual_small']
 
     # viz = get_visdom_connection()
